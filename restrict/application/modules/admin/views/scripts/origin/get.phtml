@@ -1,0 +1,27 @@
+<h1>サイト更新</h1>
+
+<form class="well" role="search" method="post" action="/admin/origin/update/primary/<?php echo $this->row->originCode; ?>/">
+
+	<div class="form-group">
+		<label>サイト名称</label>
+		<input type="text" class="form-control" name="originName" required value="<?php echo $this->escape($this->row->originName); ?>">
+	</div>
+
+	<div class="form-group">
+		<label>サイトURL</label>
+		<input type="url" class="form-control" name="originUrl" required value="<?php echo $this->escape($this->row->originUrl); ?>">
+	</div>
+
+	<div class="form-group">
+		<label>RSS</label>
+		<input type="url" class="form-control" name="originRss" required value="<?php echo $this->escape($this->row->originRss); ?>">
+	</div>
+
+	<div class="form-group">
+		<label>イメージURL</label>
+		<input type="url" class="form-control" name="originImage" required value="<?php echo $this->escape($this->row->originImage); ?>">
+	</div>
+
+	<button type="submit" class="btn btn-primary">変更実行</button>
+
+</form>

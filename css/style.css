@@ -1,0 +1,131 @@
+.grid {
+    padding: 0;
+}
+.grid-item {
+    height:auto;
+    overflow:hidden;
+    padding:3px;
+    margin-bottom:8px;
+    list-style: none;
+}
+
+h1 {
+    padding-left: 15px;
+    font-size: 16px;
+    color: white;
+    margin-top: 17px;
+}
+.navbar.navbar-default {
+    margin-bottom: 0px;
+}
+.search-bar {
+    margin-bottom: 20px;
+    padding : 5px 0px;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+}
+.searcher {
+    width: 500px;
+    margin-bottom: 0;
+}
+.keyWord {
+    width: 600px;
+}
+.keyWord a {
+    margin-right: 5px;
+}
+.search-bar .form-control {
+    padding: 5px ;
+    height: 34px;
+}
+.search-bar .btn {
+    padding: 5px 18px;
+}
+.main-table {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.main-left {
+    width: 200px;
+    display: table-cell;
+    vertical-align: top;
+    padding: 0 15px;
+}
+.main-column {
+    display: table-cell;
+    vertical-align: top;
+}
+h3 {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .keyWord {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .searcher,.keyWord {
+        width: 100%;
+    }
+    .ad-lex {
+        min-height: 280px;
+        max-height: 280px;
+    }
+    .main-left {
+        width: 100%;
+        display:block;
+        padding: 0;
+    }
+    .main-column {
+        display:block;
+    }
+    .navbar-brand {
+        font-size: 16px;
+    }
+}
+
+
+.navbar-static-bottom a {
+    color: white;
+    margin-left: 10px;
+    font-size: 14px;
+}
+.navbar-static-bottom {
+    height: 30px;
+    margin-top: 10px;
+}
+.navbar.navbar-default {
+    margin-bottom: 0px;
+}
+.navbar-static-bottom.navbar {
+    min-height: 30px;
+}
+img {
+    max-width: 100%;
+}
+.main-top h2 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.origin {
+    padding:8px;margin-bottom:10px;border: 1px #eee solid;height:150px;overflow:hidden;
+}
+.origin .reward {
+    color:#c88;
+}
+.origin .image {
+    padding:2px;
+}
+.origin .image img {
+    width: 100%;
+    max-height: 110px;
+}
+.origin .item {
+    padding:4px 2px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+}
+.origin .list-box {
+    padding: 0;
+}

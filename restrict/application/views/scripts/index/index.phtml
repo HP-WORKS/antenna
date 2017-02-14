@@ -1,0 +1,46 @@
+<ul class="breadcrumb pull-right sort-by">
+	<?php if ($this->param("sort") === "favorite"){ ?>
+		<li>
+			<a href="/?word=<?php echo $this->escape($this->param("word")); ?>">新着順</a>
+		</li>
+		<li class="active">▼人気順</li>
+	<?php } else { ?>
+		<li class="active">▼新着順</li>
+		<li>
+			<a href="/?word=<?php echo $this->escape($this->param("word")); ?>&sort=favorite">人気順</a>
+		</li>
+	<?php } ?>
+</ul>
+<h3>ARCHIVES</h3>
+
+<div class="clearfix"></div>
+
+<ul class="grid">
+
+	<?php foreach($this->archives as $archive){ ?>
+
+		<li class="col-xs-6 col-sm-4 col-md-3 col-lg-2 grid-item">
+			<div style="border: 1px solid #ddd;padding:4px;">
+				<div style="position:relative;">
+					<a href="/archive/show/<?php echo $archive->archiveCode; ?>/">
+						<img src="<?php echo $archive->archiveImage; ?>" alt="<?php echo $archive->archiveTitle; ?>" style="width:100%;">
+					</a>
+				</div>
+				<a href="/archive/show/<?php echo $archive->archiveCode; ?>/"><?php echo $archive->archiveTitle; ?></a>
+
+				<div style="margin:2px 0;color:#999;font-size:13px;">
+					<?php echo date("m月d日 H時i分", $archive->archiveCreate); ?>
+				</div>
+			</div>
+		</li>
+
+	<?php } ?>
+</ul>
+<div class="clearfix"></div>
+
+<?php
+echo $this->partial("pager.phtml", [
+	"offset" => $this->param("offset"), "limit" => 24, "count" => $this->results
+]);
+?>
+

@@ -1,0 +1,68 @@
+<h1>マスタ設定</h1>
+
+
+
+<?php if ($this->writable === false){ ?>
+
+	<div class="alert alert-danger">
+		設定ファイルの書き込み権限が有りません。application.ini の書き込み権限を確認して下さい
+	</div>
+
+<?php } else { ?>
+
+	<?php foreach ((array)$this->errors as $error){ ?>
+
+		<div class="alert alert-danger">
+			<?php echo $error; ?>
+		</div>
+
+	<?php } ?>
+
+	<form class="well" role="search" method="post" action="/admin/master/update/">
+
+		<h3>データベース接続情報</h3>
+
+		<div class="form-group">
+			<label>ホスト</label>
+			<input type="text" class="form-control" name="db.host" required value="<?php
+			echo $this->escape($this->config->resources->db->params->host); ?>">
+		</div>
+
+		<div class="form-group">
+			<label>ユーザー名</label>
+			<input type="text" class="form-control" name="db.username" required value="<?php
+			echo $this->escape($this->config->resources->db->params->username); ?>">
+		</div>
+
+		<div class="form-group">
+			<label>パスワード</label>
+			<input type="text" class="form-control" name="db.password" value="<?php
+			echo $this->escape($this->config->resources->db->params->password); ?>">
+		</div>
+
+		<div class="form-group">
+			<label>データベース名</label>
+			<input type="text" class="form-control" name="db.dbname" value="<?php
+			echo $this->escape($this->config->resources->db->params->dbname); ?>">
+		</div>
+
+		<h3>管理画面ログイン情報</h3>
+
+		<div class="form-group">
+			<label>ユーザー名</label>
+			<input type="text" class="form-control" name="admin.username" required value="<?php
+			echo $this->escape($this->config->admin->username); ?>">
+		</div>
+
+		<div class="form-group">
+			<label>パスワード</label>
+			<input type="text" class="form-control" name="admin.password" value="<?php
+			echo $this->escape($this->config->admin->password); ?>">
+		</div>
+
+		<button type="submit" class="btn btn-primary">変更実行</button>
+
+	</form>
+
+<?php } ?>
+

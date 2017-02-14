@@ -1,0 +1,56 @@
+<h3>TARGET ARCHIVE</h3>
+
+<div class="col-xs-12 col-md-4 col-lg-4">
+	<a href="/archive/out/archiveCode/<?php echo $this->archive->archiveCode; ?>/" rel="nofollow" target="_blank">
+		<img
+			src="<?php echo $this->archive->archiveImage; ?>"
+			alt="<?php echo $this->archive->archiveTitle; ?>">
+	</a>
+</div>
+<div class="col-xs-12 col-md-8 col-lg-8 main-top">
+	<h2>
+		<a href="/archive/out/archiveCode/<?php echo $this->archive->archiveCode; ?>/" rel="nofollow" target="_blank">
+			<?php echo $this->archive->archiveTitle; ?>
+		</a>
+	</h2>
+	<div class="well">
+		<?php echo $this->archive->archiveBody; ?>
+	</div>
+	<div>
+		<a href="/origin/out/originCode/<?php echo $this->archive->originCode; ?>/" rel="nofollow" target="_blank">
+			<?php echo $this->archive->originName; ?>
+		</a>
+	</div>
+	<div>
+		IN：<?php echo number_format($this->archive->originIn); ?>
+		/
+		OUT：<?php echo number_format($this->archive->originOut); ?>
+	</div>
+</div>
+<div class="clearfix"></div>
+
+<h3>RELATED ARCHIVES</h3>
+
+
+<ul class="grid">
+
+	<?php foreach($this->archives as $archive){ ?>
+
+		<li class="col-xs-6 col-sm-4 col-md-3 col-lg-2 grid-item">
+			<div style="border: 1px solid #ddd;padding:4px;">
+				<div style="position:relative;">
+					<a href="/archive/show/<?php echo $archive->archiveCode; ?>/">
+						<img src="<?php echo $archive->archiveImage; ?>" alt="<?php echo $archive->archiveTitle; ?>" style="width:100%;">
+					</a>
+				</div>
+				<a href="/archive/show/<?php echo $archive->archiveCode; ?>/"><?php echo $archive->archiveTitle; ?></a>
+
+				<div style="margin:2px 0;color:#999;font-size:13px;">
+					<?php echo date("m月d日 H時i分", $archive->archiveCreate); ?>
+				</div>
+			</div>
+		</li>
+
+	<?php } ?>
+</ul>
+<div class="clearfix"></div>

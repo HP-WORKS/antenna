@@ -1,0 +1,21 @@
+<h3>
+	エラーが発生しました
+</h3>
+<h4><?php echo $this->message ?></h4>
+
+<?php if (isset($this->exception)): ?>
+
+	<h5>Exception information:</h5>
+	<p>
+		<b>Message:</b> <?php echo $this->exception->getMessage() ?>
+	</p>
+
+	<h5>Stack trace:</h5>
+	<pre><?php echo $this->exception->getTraceAsString() ?>
+  </pre>
+
+	<h5>Request Parameters:</h5>
+	<pre><?php echo $this->escape(var_export($this->request->getParams(), true)) ?>
+  </pre>
+
+<?php endif ?>

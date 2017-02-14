@@ -1,0 +1,48 @@
+<ul class="pagination">
+	<?php if ($this->offset > 0){ ?>
+		<li>
+			<a href="?offset=<?php
+			echo $this->offset-$this->limit; ?>">前へ</a>
+		</li>
+	<?php } ?>
+	<?php if ($this->offset/$this->limit-1 > 0){ ?>
+		<li>
+			<a href="?offset=<?php
+			echo $this->offset-$this->limit; ?>"><?php echo $this->offset/$this->limit-1; ?></a>
+		</li>
+	<?php } ?>
+	<?php if ($this->offset > 0){ ?>
+		<li>
+			<a href="?offset=<?php
+			echo $this->offset-$this->limit; ?>"><?php echo $this->offset/$this->limit; ?></a>
+		</li>
+	<?php } ?>
+
+	<li class="active">
+		<a><?php echo $this->offset/$this->limit+1; ?></a>
+	</li>
+
+	<?php if ($this->offset+$this->limit < $this->count){ ?>
+
+		<li>
+			<a href="?&offset=<?php
+			echo $this->offset+$this->limit; ?>">
+				<?php echo $this->offset/$this->limit+2; ?>
+			</a>
+		</li>
+	<?php } ?>
+	<?php if ($this->offset+$this->limit*2 < $this->count){ ?>
+		<li>
+			<a href="?offset=<?php
+			echo $this->offset+$this->limit*2; ?>">
+				<?php echo $this->offset/$this->limit+3; ?>
+			</a>
+		</li>
+	<?php } ?>
+	<?php if ($this->offset+$this->limit < $this->count){ ?>
+		<li>
+			<a href="?offset=<?php
+			echo $this->offset+$this->limit; ?>">次へ</a>
+		</li>
+	<?php } ?>
+</ul>

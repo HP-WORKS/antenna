@@ -1,0 +1,97 @@
+<html lang="ja">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link
+		rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		crossorigin="anonymous">
+
+	<link rel="stylesheet" href="/css/bootstrap.cosmo.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous">
+
+	</script>
+	<script src="/js/masonry.pkgd.min.js"></script>
+	<script src="/js/imagesloaded.pkgd.min.js"></script>
+	<script>
+		$(function(){
+			$('.grid').imagesLoaded(function(){
+				$('.grid').masonry({
+					itemSelector: '.grid-item',
+					isAnimated: true
+				});
+			});
+		});
+	</script>
+
+	<?php if ($this->canonical !== null){ ?>
+		<link rel="canonical" href="<?php echo $this->canonical; ?>">
+	<?php } ?>
+
+	<!-- Licensed under MIT https://hp-work.net/ -->
+</head>
+<body>
+
+<div class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<a href="/" class="navbar-brand">アダルト動画アンテナサイトの動作デモ</a>
+		</div>
+	</div>
+</div>
+<div class="search-bar">
+	<div class="container">
+		<form class="col-xs-12 searcher" action="/" method="get">
+			<div class="input-group">
+				<input
+					type="search"
+					name="word"
+					class="form-control"
+					placeholder="キーワード検索 スペースで区切る"
+					value="<?php echo $this->escape($this->param("word")); ?>"
+				/>
+				<div class="input-group-btn">
+					<button type="submit" class="btn btn-primary">検索</button>
+				</div>
+			</div>
+		</form>
+		<div class="col-xs-12 keyWord">
+			<div class="help-block crop">
+				人気ワード：
+				<a href="/?word=巨乳">巨乳</a>
+				<a href="/?word=素人">素人</a>
+				<a href="/?word=中出し">中出し</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="main-table">
+		<div class="main-column">
+			<?php echo $this->layout()->content; ?>
+		</div>
+		<div class="main-left">
+			<h3>MENU</h3>
+			<div class="list-group">
+				<a href="/" class="list-group-item">TOPページ</a>
+				<a href="/origin" class="list-group-item">登録サイト一覧</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="navbar navbar-default navbar-static-bottom">
+	<div class="container text-right">
+		<a href="https://hp-work.net" target="_blank" rel="nofollow">Powered by アダルトサイト制作会社</a>
+	</div>
+</div>
+</body>
+</html>
